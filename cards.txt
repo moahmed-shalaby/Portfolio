@@ -1,0 +1,150 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+.card-flib {
+  background-color: transparent;
+  width: 80%;
+  margin: 0 auto;
+  height: 350px;
+  perspective: 1000px;
+}
+.card-flib-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card-flib:hover .card-flib-content {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card-front {
+  background: linear-gradient(-229deg, #0093e9, #80d0c7);
+}
+.card-back {
+  background-image: url(/image/css-code.jpg);
+  background-size: cover;
+  color: white;
+  transform: rotateY(180deg);
+}
+.card-back h1,
+.card-back p {
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.card-back h1 {
+  font-size: 1.7rem;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(2px 2px 5px black);
+  opacity: 0.7;
+}
+
+.certificates .card-flib .button {
+  width: 144px;
+  height: 48px;
+  background: #1163ff;
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  transition: 0.3s;
+}
+.certificates .card-flib .button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: 128px;
+  height: 35px;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: 0.25em;
+  line-height: 35px;
+  bottom: 94px;
+  left: calc(50% - 128px / 2);
+}
+.certificates .card-flib .button::after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: sffffff;
+  left: calc (50% - 10px);
+  bottom: 74px;
+}
+.certificates .card-flib .button::before,
+.certificates .card-flib .button::after {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.certificates .card-flib .button-wrapper .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-wrapper,
+.certificates .card-flib .button-wrapper .text,
+.certificates .card-flib .button-wrapper .icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+.certificates .card-flib .button-wrapper .text {
+  top: 0;
+}
+.certificates .card-flib .button-wrapper .text,
+.certificates .card-flib .button-wrapper .icon {
+  transition: top 0.5s;
+}
+.certificates .card-flib .button-wrapper .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  top: 100%;
+  font-size: 24px;
+}
+.certificates .card-flib .button:hover {
+  background-color: #6c1bff;
+}
+.certificates .card-flib .button:hover .text {
+  top: -100%;
+}
+.certificates .card-flib .button:hover .icon {
+  top: 0;
+}
+.certificates .card-flib .button:hover::before,
+.certificates .card-flib .button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.certificates .card-flib .button::before {
+  bottom: 64px;
+}
+.certificates .card-flib .button::after {
+  bottom: 84px;
+}
