@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+* {
+  box-sizing: border-box;
+}
 :root {
   --color-W: #fbfcfe;
   --color-O: #da4820;
@@ -53,7 +56,6 @@ ul {
 .sub-nav.show {
   left: 10px;
 }
-
 .sub-nav span {
   width: 80%;
   height: 100%;
@@ -460,6 +462,7 @@ ul {
 /* Start skills */
 .skills .skills-content {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
   padding: 15px;
@@ -563,15 +566,6 @@ ul {
     rgb(245, 243, 243) 0px 2px 6px 2px;
   transform: scale(1.03);
 }
-@media (max-width: 1130px) {
-  .skills .skills-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 /* End skills */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Start certificates */
@@ -611,13 +605,6 @@ ul {
   width: 100%;
   border-radius: 10px;
   filter: blur(3px);
-}
-@media (max-width: 1070px) {
-  .certificates .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 }
 .cards .card .text-cert {
   width: 50%;
@@ -734,53 +721,58 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 430px;
+  max-width: 350px;
   gap: 10px;
-  background-color: var(--color-W);
   padding: 5px;
   border-radius: 15px;
+}
+.designs .container .card-des a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .designs .container .card-des .card-pic {
   position: relative;
   width: 80%;
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 80%;
+  border-radius: 50%;
+  border: 3px double var(--color-O);
   transition: 0.5s;
 }
 .designs .container .card-des .card-pic:hover {
   transform: scale(1.02);
 }
-
 .designs .container .card-des .card-pic img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .designs .card-des .text {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  background-color: var(--color-W);
+  border-radius: 15px;
+  width: 200px;
+  height: 50px;
 }
 .designs .card-des .text h3 {
   text-transform: capitalize;
   font-size: 25px;
   color: var(--color-O);
-  margin: 5px;
-  text-align: center;
-  width: 150px;
-  border-radius: 4px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 .designs .card-des .text p {
   text-transform: capitalize;
   font-size: 20px;
   text-align: center;
-  background-color: var(--color-G);
+  background-color: var(--color-B);
+  font-style: italic;
   border-radius: 10px;
   color: var(--color-W);
 }
@@ -792,8 +784,6 @@ ul {
   transition: 0.2s;
 }
 .designs .card-des .button:hover {
-  box-shadow: rgb(212, 47, 18) 0px 1px 2px 0px,
-    rgb(245, 243, 243) 0px 2px 6px 2px;
   transform: scale(1.03);
 }
 .designs .card-des .button .btn {
@@ -802,7 +792,7 @@ ul {
   height: 100%;
   border-radius: 10px;
   color: var(--color-W);
-  background-color: var(--color-B);
+  background-color: var(--color-O);
   text-align: center;
   cursor: pointer;
 }
