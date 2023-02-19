@@ -11,7 +11,7 @@ html {
   --color-B: #000000;
 }
 body {
-  height: 500vh;
+  height: 520vh;
   font-family: "Cairo", sans-serif;
   background-color: #8b848b;
   background-image: linear-gradient(
@@ -21,9 +21,19 @@ body {
     #000000 100%
   );
 }
-@media (max-width: 1260px) {
+@media (max-width: 1265px) {
   body {
-    height: 1120vh;
+    height: 750vh;
+  }
+}
+@media (max-width: 1130px) {
+  body {
+    height: 880vh;
+  }
+}
+@media (max-width: 1186px) {
+  body {
+    height: 900vh;
   }
 }
 .container {
@@ -96,7 +106,7 @@ ul {
   color: #fff;
   font-size: 50px;
   letter-spacing: 5px;
-  transform: translate(10%, -5%);
+  transform: translate(10%, -25%);
 }
 .navBar .logo span:nth-child(1) {
   color: transparent;
@@ -214,9 +224,9 @@ ul {
     display: flex;
     width: 20%;
     background-color: var(--color-G);
-    height: 300px;
+    height: 395px;
     position: absolute;
-    top: 9.5%;
+    top: 12%;
     right: 50px;
     border-radius: 10px;
   }
@@ -230,6 +240,18 @@ ul {
     box-shadow: rgb(223, 61, 33) 0px 1px 2px 0px,
       rgb(233, 224, 222) 0px 2px 6px 2px;
     transform: skew(0);
+    border-radius: 10px;
+  }
+}
+@media (max-width: 1015px) {
+  .navBar .list.active {
+    display: flex;
+    width: 20%;
+    background-color: var(--color-G);
+    height: 395px;
+    position: absolute;
+    top: 15%;
+    right: 50px;
     border-radius: 10px;
   }
 }
@@ -247,6 +269,10 @@ ul {
     gap: 30px;
   }
   .container .details .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }
   .details .pic img {
@@ -300,19 +326,29 @@ ul {
   font-weight: bold;
   letter-spacing: 2px;
 }
+.details .text .tx {
+  width: 700px;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--color-O);
+  font-style: italic;
+  margin-top: 10px;
+}
 .details .text-h {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 70%;
   height: 75px;
-  margin-top: 70px;
-  background-color: var(--color-O);
+  margin-top: 50px;
+  background-color: var(--color-G);
   border-radius: 30px;
   box-shadow: rgb(212, 47, 18) 0px 1px 2px 0px, rgb(197, 15, 15) 0px 2px 6px 2px;
 }
 .details .text-h .fa-solid {
   font-size: 25px;
-  color: var(--color-G);
+  color: var(--color-W);
 }
 .details .text h6 {
   text-transform: uppercase;
@@ -448,7 +484,7 @@ ul {
 }
 .about-content .card .content h4 {
   text-transform: capitalize;
-  line-height: 1.6;
+  line-height: 0.6;
   font-size: 17px;
   font-style: italic;
 }
@@ -597,14 +633,17 @@ ul {
   transition: 0.4s;
 }
 .cards .card .card-pic:hover {
-  box-shadow: rgb(212, 47, 18) 0px 1px 2px 0px,
-    rgb(245, 243, 243) 0px 2px 6px 2px;
+  box-shadow: rgb(243, 70, 2) 0px 2px 4px, rgb(211, 15, 15) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transform: scale(1.03);
 }
 .cards .card .card-pic img {
   width: 100%;
   border-radius: 10px;
   filter: blur(3px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .cards .card .text-cert {
   width: 50%;
@@ -711,32 +750,30 @@ ul {
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Start Designs */
 .designs .container .card-design {
+  width: 90%;
+  height: 577px;
+  margin: auto;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
+  overflow-x: auto;
+  gap: 15px;
 }
 .designs .container .card-des {
+  min-width: 360px;
+  height: 555px;
+  margin-right: 2px;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  max-width: 350px;
-  gap: 10px;
-  padding: 5px;
+  background-color: var(--color-G);
   border-radius: 15px;
-}
-.designs .container .card-des a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
 }
 .designs .container .card-des .card-pic {
   position: relative;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  border: 3px double var(--color-O);
+  width: 85%;
+  padding-top: 5px;
+  border-radius: 10px;
   transition: 0.5s;
 }
 .designs .container .card-des .card-pic:hover {
@@ -744,58 +781,44 @@ ul {
 }
 .designs .container .card-des .card-pic img {
   width: 100%;
-  border-radius: 50%;
+  border-radius: 10px;
   cursor: pointer;
 }
 .designs .card-des .text {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  background-color: var(--color-W);
   border-radius: 15px;
-  width: 200px;
-  height: 50px;
-}
-.designs .card-des .text h3 {
-  text-transform: capitalize;
-  font-size: 25px;
-  color: var(--color-O);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
+  width: 85%;
+  height: 200px;
 }
 .designs .card-des .text p {
   text-transform: capitalize;
   font-size: 20px;
+  font-weight: bold;
   text-align: center;
-  background-color: var(--color-B);
-  font-style: italic;
+  background-color: var(--color-W);
   border-radius: 10px;
-  color: var(--color-W);
+  color: var(--color-B);
 }
-.designs .card-des .button {
-  position: relative;
-  width: 70px;
-  height: 35px;
-  border-radius: 10px;
-  transition: 0.2s;
-}
-.designs .card-des .button:hover {
-  transform: scale(1.03);
-}
-.designs .card-des .button .btn {
-  text-transform: capitalize;
+.designs .card-des .text a {
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  text-decoration: none;
+}
+.designs .card-des .text h3 {
+  text-transform: capitalize;
+  font-size: 25px;
   color: var(--color-W);
   background-color: var(--color-O);
-  text-align: center;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  border-radius: 15px;
 }
+
 /* End Designs */
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* start contacts  */
@@ -827,8 +850,8 @@ ul {
 .contacts .footer .text-h span {
   width: 100%;
   border-radius: 10px;
-  font-size: 30px;
-  color: var(--color-O);
+  font-size: 35px;
+  color: var(--color-W);
   transition: 0.5s;
   cursor: pointer;
 }
@@ -908,23 +931,23 @@ ul {
 .contacts .footer .social-links ul li:nth-child(6):hover::before {
   content: attr(data-name);
   position: absolute;
-  top: -45px;
-  font-size: 20px;
+  top: -53px;
+  font-size: 15px;
   width: fit-content;
   height: fit-content;
   padding: 3px;
   border-radius: 10px;
   background-color: var(--color-O);
   color: var(--color-W);
-  left: -39px;
+  left: -25px;
 }
 .contacts .footer .social-links ul li:nth-child(6):hover::after {
   content: "";
   position: absolute;
   border: 13px solid;
-  border-color: var(--color-W) transparent transparent transparent;
-  top: -16px;
-  left: 12px;
+  border-color: var(--color-O) transparent transparent transparent;
+  top: -18px;
+  left: 11px;
 }
 .contacts .footer .social-links ul li a {
   width: 100%;
@@ -936,35 +959,35 @@ ul {
 .contacts .footer .social-links ul li:hover {
   transform: translate(5px, -5px);
 }
-.fb:hover i,
+.fb i,
 .fb:hover {
   color: white;
   background-color: blue;
 }
-.insta:hover i,
+.insta i,
 .insta:hover {
   color: white;
   background-color: rgb(255, 0, 255);
 }
-.twitter:hover i,
+.twitter i,
 .twitter:hover {
   color: white;
   background-color: #00acee;
 }
-.github:hover i,
+.github i,
 .github:hover {
   color: var(--color-B);
   background-color: var(--color-W);
 }
-.linkedin:hover i,
+.linkedin i,
 .linkedin:hover {
   color: #00acee;
   background-color: var(--color-W);
 }
-.whatsapp:hover i,
+.whatsapp i,
 .whatsapp:hover {
-  color: green;
-  background-color: var(--color-W);
+  color: var(--color-W);
+  background-color: green;
 }
 
 .contacts .footer .text-p {
